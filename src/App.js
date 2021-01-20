@@ -1,23 +1,62 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
+
+  
+  const TexteRouge = () => {
+    
+    
+    let Screen = document.querySelector(`.screen`)
+   
+
+    if (Screen.classList.contains(`texteRouge`)){
+
+      Screen.classList.remove(`texteRouge`)
+
+    }else{
+
+      Screen.classList.add(`texteRouge`)
+
+    }
+
+  }
+
+  const Plus =()=>{
+
+    let screen = document.querySelector(`.screen`)
+    screen.innerHTML ++
+    console.log(screen);
+
+  }
+  const Moins =()=>{
+
+    let screen = document.querySelector(`.screen`)
+    screen.innerHTML --
+    console.log(screen);
+
+  }
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <div className="screen">
+        0
+      </div>
+      <button className="augmenter" onClick={Plus}>
+        +1
+      </button>
+      <button className="diminuer" onClick={Moins}>
+        -1
+      </button>
+      <button className="style" onClick={TexteRouge}>
+        rouge
+      </button>
+
+     
     </div>
   );
 }
